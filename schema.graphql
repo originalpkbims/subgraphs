@@ -1,0 +1,24 @@
+type Batch @entity {
+  id: ID!
+  serialNumber: String!
+  projectID: BigInt!
+  vintage: String!
+  creditType: String!
+  value: BigDecimal!
+  tokenAddress: String!
+  broker: String!
+  timestamp: BigInt!
+  transaction: Transaction!
+}
+
+type Transaction @entity {
+  id: ID!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  blockHash: Bytes!
+  from: Bytes!
+  to: Bytes
+  value: BigInt!
+  gasUsed: BigInt!
+  gasPrice: BigInt!
+}
