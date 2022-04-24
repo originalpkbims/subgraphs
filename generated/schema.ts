@@ -24,6 +24,7 @@ export class Batch extends Entity {
     this.set("tokenAddress", Value.fromString(""));
     this.set("broker", Value.fromString(""));
     this.set("timestamp", Value.fromBigInt(BigInt.zero()));
+    this.set("originaltx", Value.fromString(""));
     this.set("transaction", Value.fromString(""));
   }
 
@@ -123,6 +124,15 @@ export class Batch extends Entity {
 
   set timestamp(value: BigInt) {
     this.set("timestamp", Value.fromBigInt(value));
+  }
+
+  get originaltx(): string {
+    let value = this.get("originaltx");
+    return value!.toString();
+  }
+
+  set originaltx(value: string) {
+    this.set("originaltx", Value.fromString(value));
   }
 
   get transaction(): string {

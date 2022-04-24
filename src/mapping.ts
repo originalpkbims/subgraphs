@@ -24,6 +24,7 @@ export function handleBatchCreated(event: BatchCreated): void {
       batch.tokenAddress = event.params.token.toHex()
       batch.broker = event.params.broker.toHex()
       batch.timestamp = transaction.timestamp
+      batch.originaltx = event.params.certifier.toHex()
       batch.transaction = transaction.id
       
   }

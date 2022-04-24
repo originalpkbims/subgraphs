@@ -8,6 +8,7 @@ type Batch @entity {
   tokenAddress: String!
   broker: String!
   timestamp: BigInt!
+  originaltx: String!
   transaction: Transaction!
 }
 
