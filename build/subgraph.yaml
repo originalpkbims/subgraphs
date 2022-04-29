@@ -18,7 +18,7 @@ dataSources:
       abis:
         - name: mintmoss
           file: mintmoss/abis/mintmoss.json
-      eventHandlers:
-        - event: BatchCreated(string,uint256,string,string,uint256,address,address,indexed address)
-          handler: handleBatchCreated
+      callHandlers:
+        - function: createBatch(string,uint256,string,string,uint256,address,address,bytes32)
+          handler: handleBatchCall
       file: mintmoss/mintmoss.wasm
